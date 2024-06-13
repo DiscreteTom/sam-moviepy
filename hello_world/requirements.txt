@@ -1,2 +1,1 @@
-requests
-moviepy
+moviepy == 1.0.3
