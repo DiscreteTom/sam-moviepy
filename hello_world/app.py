@@ -7,9 +7,12 @@ def main():
 
     # Make the text. Many more options are available.
     txt_clip = TextClip("My Holidays 2013", fontsize=70, color="white").set_duration(2)
-
-    result = CompositeVideoClip([video, txt_clip])  # Overlay text on video
-    result.write_videofile("edited.mp4", fps=25)  # Many options...
+    result = CompositeVideoClip([video, txt_clip])
+    result.write_videofile(
+        "/tmp/edited.mp4",
+        fps=25,
+        temp_audiofile="/tmp/temp_audio.mp3",
+    )
 
 
 def lambda_handler(event, context):
