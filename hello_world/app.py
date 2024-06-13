@@ -5,7 +5,6 @@ def main():
     video = VideoFileClip("buggy.mp4")
     txt_clip = TextClip(
         "My Holidays 2013",
-        font="./fonts/MiSans-Regular.ttf",
         fontsize=70,
         color="white",
     ).set_duration(2)
