@@ -1,4 +1,4 @@
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: >
   sam-moviepy
@@ -26,6 +26,8 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+      Layers:
+        - !Sub arn:aws:lambda:us-east-1:${AWS::AccountId}:layer:image-magick:1
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
