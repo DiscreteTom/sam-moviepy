@@ -3,11 +3,17 @@ from moviepy.editor import *
 
 def main():
     video = VideoFileClip("buggy.mp4")
-    txt_clip = TextClip(
-        "My Holidays 2013",
-        fontsize=70,
-        color="white",
-    ).set_duration(2)
+
+    txt_clip = (
+        TextClip(
+            "My Holidays 2013",
+            fontsize=70,
+            size=[1000, 500],
+            color="black",
+        )
+        .set_position("center")
+        .set_duration(2)
+    )
     result = CompositeVideoClip([video, txt_clip])
     result.write_videofile(
         "/tmp/edited.mp4",
